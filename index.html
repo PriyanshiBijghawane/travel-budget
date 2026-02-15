@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Budget Calculator</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>🌍 Travel Budget Planner</h1>
+    <p>Plan, Share, Save – Smartly!</p>
+     <button id="themeToggle" class="theme-toggle">🌙</button>
+  </header>
+
+  <main class="container">
+    <form id="budget-form" class="card">
+      <!-- Currency Selector -->
+      <label for="currency">Select Currency:</label>
+      <select id="currency" name="currency">
+        <option value="INR" selected>₹ INR</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+      </select>
+
+      <!-- Trip Details -->
+      <input type="text" id="destination" placeholder="Destination" required />
+      <input type="number" id="people" placeholder="Number of People" min="1" required />
+      <input type="number" id="days" placeholder="Number of Days" min="1" required />
+
+      <!-- Expense Details -->
+      <input type="number" id="transport" placeholder="Transport (Total)" required />
+      <input type="number" id="accommodation" placeholder="Accommodation (Per Night)" required />
+      <input type="number" id="food" placeholder="Food (Per Person Per Day)" required />
+      <input type="number" id="extras" placeholder="Extras (optional)" />
+       
+      
+
+      <label for="receipt">🧾 Upload Receipt (Optional):</label>
+<input type="file" id="receipt" accept="image/*" />
+<p id="ocrText" class="ocr-output"></p>
+
+<label for="itinerary">🗓️ Trip Itinerary (one line per day):</label>
+<textarea id="itinerary" rows="4" placeholder="Day 1 - Travel to Goa&#10;Day 2 - Beach and shopping&#10;Day 3 - Return"></textarea>
+
+
+      <button type="submit">💰 Calculate Budget</button>
+      <p id="loadingText" class="fade" style="display:none;">Calculating...</p>
+    </form>
+
+    <!-- Result Output -->
+    <section id="result" class="card result-card">
+      <h2>💸 Estimated Budget</h2>
+      <p id="totalCost"></p>
+      <p id="costPerPerson"></p>
+      <button id="downloadPDF">📥 Download PDF</button>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Travel Calculator App</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>

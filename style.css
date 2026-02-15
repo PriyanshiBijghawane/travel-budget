@@ -1,0 +1,247 @@
+ @keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+ 
+ /* Tablets */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  #themeToggle {
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  button, input, textarea, select {
+    font-size: 1rem;
+  }
+
+  #themeToggle {
+    font-size: 1.2rem;
+  }
+}
+ 
+
+:root {
+  --bg-color: #f7f8f8;
+  --text-color: #222;
+  --card-bg: #ffffffcc;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --header-bg: linear-gradient(90deg, #f7f8f8, #acbb78);
+  --button-bg: linear-gradient(90deg, #f7f8f8, #acbb78);
+  --button-hover: linear-gradient(90deg, #acbb78, #f7f8f8);
+   body {
+  background: linear-gradient(-45deg, #f7f8f8, #acbb78, #e3f7cf, #d4e3a9);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
+}
+
+body.light .container {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: #222;
+}
+
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --card-bg: #1f1f1fcc;
+  --input-bg: #2a2a2a;
+  --input-border: #444;
+  --header-bg: linear-gradient(90deg,  #536976, #292E49);
+  --button-bg: linear-gradient(90deg, #536976, #292E49);
+  --button-hover: linear-gradient(90deg,  #292E49, #536976);
+  background: linear-gradient(-45deg, #536976, #292E49, #3b3f51, #292E49);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+  color: var(--text-color);
+}
+
+
+/* Gradient Background + Base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #20002c, #cbb4d4);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(90deg, #734b6d, #42275a);
+  color: white;
+  width: 100%;
+}
+header {
+  background: var(--header-bg);
+}
+
+.container {
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Card Style */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  backdrop-filter: blur(8px);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+
+
+/* Inputs and Button */
+input, select, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input, select, button {
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+}
+
+/* Also update .card and header */
+.card {
+  background: var(--card-bg);
+}
+
+.ocr-output {
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  margin-top: 10px;
+}
+
+
+button {
+  background: linear-gradient(90deg,#20002c, #cbb4d4);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button {
+  background: var(--button-bg);
+}
+
+
+button:hover {
+  background: linear-gradient(90deg, #20002c, #cbb4d4);
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+
+/* Fade Slide Result */
+.result-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  display: none;
+}
+
+.result-card.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  margin-top: 40px;
+  padding: 1rem;
+  text-align: center;
+  color: #777;
+}
+
+
+#downloadPDF {
+  margin-top: 15px;
+  padding: 10px;
+  background: linear-gradient(90deg, #20002c, #cbb4d4);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-color);
+  resize: vertical;
+   margin-bottom: 10px;
+}
